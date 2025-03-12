@@ -21,7 +21,6 @@ Projeto PIM - 1° semestre de 2025
 | ---------------- | ---------------- | -------------------------------------------------------------- | ----------------------------------------------------- |
 |__Caio Costa Santos__   | *Scrum Master*  | [![](https://bit.ly/3f9Xo0P)](https://github.com/Caio-eng-gif)| [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/caio-costa-santos-7a7277195/) |
 |__Gabriel Souza__  | *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/GABRIELWCS)  | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/gabriel-souza-553224247/) |
-|__Guilherme Oliveira__| *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/SiXFaLLz)      | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/guilherme-oliveira-83230922a/) |
 |__Lucas Gimenez__ | *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/Lucasmsg97)  | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/lucas-gimenez-360b0310a/) |
 |__Lucas Machado__| *Product Owner* | [![](https://bit.ly/3f9Xo0P)](https://github.com/LucasMachado12) | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/lucas-machado-31510b32a/) |
 
