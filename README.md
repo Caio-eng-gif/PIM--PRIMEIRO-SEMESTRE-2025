@@ -29,6 +29,14 @@ Projeto PIM - 1° semestre de 2025
 
 
 ## 👨‍🏫 Disciplinas Integradas:
+- Análise de sistemas orientada a objetos
+- Banco de dados
+- Economia e mercado
+- Engenharia de software 2
+- Gestão estrátegica de RH
+- Lingua brasileira de sinais
+- Programação orientada a objetos
+- Projeto de interface com o usuário
 
 
 
