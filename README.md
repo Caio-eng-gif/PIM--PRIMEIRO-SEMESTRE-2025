@@ -37,6 +37,14 @@ Projeto PIM - 1° semestre de 2025
 
 
 ## 💬 Descritivo do Projeto
+- Requisitos Funcionais
+  
+  Caso de Uso:
+  
+
+  
+![CasodeUsoAstah](https://github.com/user-attachments/assets/1466d833-78fc-49f3-b2d3-06412ef57ad9)
+
 
 
 
