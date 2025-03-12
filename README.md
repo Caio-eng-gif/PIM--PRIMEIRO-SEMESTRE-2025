@@ -55,7 +55,7 @@ Projeto PIM - 1° semestre de 2025
 
 ## ⏳ Entregas
 SERÁ REALIZADA A ALTERAÇÃO
-- [X] [**Sprint 1**] - 04/09/2024 a 11/09/2024 ✅
+- [X] [**Sprint 1**] - 12/03/2025 a 19/03/2025 ✅
 - [X] [**Sprint 2**] - 11/09/2024 a 18/09/2024 ✅
 - [X] [**Sprint 3**] - 18/09/2024 a 02/10/2024 ✅
 - [X] [**Sprint 4**] - 02/10/2024 a 09/10/2024 ✅
