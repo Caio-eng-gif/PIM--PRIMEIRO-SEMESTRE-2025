@@ -19,10 +19,10 @@ Projeto PIM - 1° semestre de 2025
 
 | Aluno            | Função           | GitHub                                                         | LinkedIn                                              |
 | ---------------- | ---------------- | -------------------------------------------------------------- | ----------------------------------------------------- |
-|__Caio Costa Santos__   | *Scrum Master*  | [![](https://bit.ly/3f9Xo0P)](https://github.com/Caio-eng-gif)| [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/caio-costa-santos-7a7277195/) |
+|__Caio Costa Santos__   | *Product Owner*  | [![](https://bit.ly/3f9Xo0P)](https://github.com/Caio-eng-gif)| [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/caio-costa-santos-7a7277195/) |
 |__Gabriel Souza__  | *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/GABRIELWCS)  | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/gabriel-souza-553224247/) |
-|__Lucas Gimenez__ | *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/Lucasmsg97)  | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/lucas-gimenez-360b0310a/) |
-|__Lucas Machado__| *Product Owner* | [![](https://bit.ly/3f9Xo0P)](https://github.com/LucasMachado12) | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/lucas-machado-31510b32a/) |
+|__Lucas Gimenez__ | *Scrum Master* | [![](https://bit.ly/3f9Xo0P)](https://github.com/Lucasmsg97)  | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/lucas-gimenez-360b0310a/) |
+|__Lucas Machado__| *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/LucasMachado12) | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/lucas-machado-31510b32a/) |
 
 
 
@@ -53,6 +53,42 @@ Projeto PIM - 1° semestre de 2025
   
 ![CasodeUsoAstah](https://github.com/user-attachments/assets/1466d833-78fc-49f3-b2d3-06412ef57ad9)
 
+- Requisitos não funcionais
+  
+**Segurança**
+
+Proteção de Dados: Como o sistema pode lidar com dados sensíveis, é necessário garantir que todas as informações sejam criptografadas tanto em trânsito quanto em repouso.
+Autenticação e Autorização: O sistema deve permitir controle de acesso adequado, com autenticação forte e permissões para diferentes perfis de usuários.
+Proteção contra Ataques: O sistema deve ser protegido contra ameaças como ataques DDoS, SQL Injection, e outras vulnerabilidades.
+
+**Usabilidade**
+
+Interface de Usuário: O sistema deve possuir uma interface intuitiva e de fácil utilização, permitindo que os operadores ou administradores do sistema usem as funcionalidades sem dificuldades.
+
+**Compatibilidade**
+
+Integração com Outros Sistemas: O sistema deve ser capaz de integrar-se facilmente com outros sistemas existentes, como bancos de dados, APIs de terceiros ou plataformas externas.
+Compatibilidade com Navegadores e Dispositivos: Caso o sistema seja acessado via web, ele deve ser compatível com os principais navegadores (Chrome, Firefox, Safari) e dispositivos (desktop, mobile).
+
+**Acessibilidade**
+
+O sistema deve ser acessível a pessoas com deficiência, garantindo que todas as funções possam ser realizadas com o uso de tecnologias assistivas, como leitores de tela e navegação por teclado.
+
+**Compliance e Regulamentação**
+
+
+O sistema deve estar em conformidade com as regulamentações e leis locais e internacionais aplicáveis (ex: LGPD no Brasil, GDPR na União Europeia), especialmente no que diz respeito ao armazenamento e tratamento de dados pessoais.
+
+
+**Monitoramento e Auditoria**
+
+O sistema deve ter capacidade de monitoramento constante, para garantir que está funcionando corretamente. Isso inclui a geração de logs de acesso, erros, uso de recursos, etc.
+Auditoria: O sistema deve ser capaz de registrar todas as ações dos usuários, garantindo que qualquer evento relevante possa ser auditado posteriormente.
+
+**Treinamento e Capacitação**
+
+A solução de IA integrada no sistema precisa de um processo contínuo de treinamento e atualização dos modelos, para garantir que os algoritmos de triagem sejam precisos e eficientes ao longo do tempo.
+Mecanismos de Feedback: O sistema deve permitir que os operadores forneçam feedback sobre a precisão da triagem, o que pode ser usado para ajustar ou melhorar os modelos.
 
 
 
@@ -70,7 +106,7 @@ Projeto PIM - 1° semestre de 2025
 
 
 ## ⏳ Entregas
-SERÁ REALIZADA A ALTERAÇÃO
+SUJEITO A ALTERAÇÃO
 - [X] [**Sprint 1**] - 12/03/2025 a 19/03/2025 ✅
 - [X] [**Sprint 2**] - 11/09/2024 a 18/09/2024 ✅
 - [X] [**Sprint 3**] - 18/09/2024 a 02/10/2024 ✅
@@ -90,6 +126,8 @@ SERÁ REALIZADA A ALTERAÇÃO
   funcionais).
 - Priorização de Requisitos: Organizar os requisitos em ordem de importância e urgência, com base na viabilidade e impacto para o projeto.
 
+ITENS ABAIXO SUJEITO A ALTERAÇÃO
+
 **Sprint 2**
 
    **Estrutura da Parte Escrita do Projeto**
@@ -99,12 +137,12 @@ SERÁ REALIZADA A ALTERAÇÃO
 - Metodologia: Descrever a abordagem que será usada para o desenvolvimento (ágil, waterfall, etc.).
 - Cronograma: Criar um cronograma preliminar para as entregas do projeto, definindo as fases de desenvolvimento.
 - Análise de Riscos: Identificar possíveis obstáculos e riscos que podem surgir durante o desenvolvimento e como mitigá-los.
-- Tecnologias e Ferramentas: Listar as ferramentas, linguagens e tecnologias que serão usadas no projeto.
+- Tecnologias e Ferramentas: Listar as ferramentasc e tecnologias que serão usadas no projeto.
+- Elaborar diagramas de classe para definir as principais classes e diagramas de sequência para ilustrar o fluxo de interações.
 
 **Sprint 3**
 
 - Escolher a estrutura de arquitetura, garantindo que atenda aos requisitos funcionais e não funcionais.
-- Elaborar diagramas de classe para definir as principais classes e diagramas de sequência para ilustrar o fluxo de interações.
 - Planejar os tipos de testes que serão aplicados (unitários, integração, etc.), descrevendo os critérios de aceitação para cada funcionalidade.
 
 **Sprint 4**
@@ -117,19 +155,12 @@ SERÁ REALIZADA A ALTERAÇÃO
 
 **Sprint 5**
 
-- Refinamento e Integração das Funcionalidades Avançadas
-- Implementação de Funcionalidades Avançadas: Adicionar as funcionalidades complementares ao sistema, incluindo automações, relatórios, notificações, etc.
 - Aprimoramento da Interface de Usuário: Ajustar a interface para melhorar a experiência do usuário, com base no feedback da sprint anterior.
-- Integração de Componentes e Testes de Compatibilidade: Garantir que todos os componentes do sistema estejam funcionando de forma integrada e realizar testes para verificar a compatibilidade 
-  entre eles.
-- Documentação do Código: Documentar as principais funções e módulos do código, facilitando futuras manutenções e entendimento da lógica implementada.
+- Integração de Componentes e Testes de Compatibilidade: Garantir que todos os componentes do sistema estejam funcionando de forma integrada e realizar testes para verificar a 
 
 **Sprint 6**
 
 - Testes Finais, Ajustes e Preparação para a Entrega
-- Testes de Aceitação do Usuário (UAT): Conduzir testes finais com usuários ou stakeholders para garantir que o sistema atende aos requisitos e expectativas.
-- Correção de Bugs e Ajustes Finais: Corrigir quaisquer erros ou problemas identificados nos testes e realizar ajustes finais de performance e usabilidade.
-- Preparação da Documentação Final: Completar a documentação do projeto, incluindo manuais de usuário, descrição técnica e especificações.
 - Entrega e Treinamento: Preparar e realizar a entrega do sistema para o cliente ou usuário final, incluindo um treinamento sobre o uso do sistema, se necessário.
 
 
