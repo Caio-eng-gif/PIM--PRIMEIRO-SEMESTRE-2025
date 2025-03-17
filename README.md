@@ -23,9 +23,8 @@ Projeto PIM - 1° semestre de 2025
 |__Gabriel Souza__  | *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/GABRIELWCS)  | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/gabriel-souza-553224247/) |
 |__Lucas Gimenez__ | *Scrum Master* | [![](https://bit.ly/3f9Xo0P)](https://github.com/Lucasmsg97)  | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/lucas-gimenez-360b0310a/) |
 |__Lucas Machado__| *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/LucasMachado12) | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/lucas-machado-31510b32a/) |
-
-
-
+|__Pedro Leite__| *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/pedroleite44) | [![](https://bit.ly/2P1ZogM)]() 
+|__Rodrigo Restelli__| *Developer Team* | [![](https://bit.ly/3f9Xo0P)](https://github.com/RodrigoRestelli) | [![](https://bit.ly/2P1ZogM)]() 
 
 
 ## 👨‍🏫 Disciplinas Integradas:
