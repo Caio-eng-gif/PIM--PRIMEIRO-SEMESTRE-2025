@@ -48,7 +48,7 @@ Projeto PIM - 1° semestre de 2025
   
 
 1. Controle de acesso 
-- Login para controle de acesso e usuários com acesso a funções específicas.
+- Login para controle de acesso e diferentes níveis de acesso entre técnicos, colaboradores e admnistradores.
 2. Abertura de Chamados
 - Formulário de abertura com campos personalizáveis (tipo de problema, urgência, setor).
 
