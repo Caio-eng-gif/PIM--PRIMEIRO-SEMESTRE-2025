@@ -50,30 +50,33 @@ Projeto PIM - 1° semestre de 2025
 1. Controle de acesso 
 - Login para controle de acesso e usuários com acesso a funções específicas.
 2. Abertura de Chamados
-	•	Formulário de abertura com campos personalizáveis (tipo de problema, urgência, setor).
-	•	Opção de anexar arquivos (prints, logs de erro, documentos).
-	•	Categorização automática ou manual (TI, Financeiro, RH, Infraestrutura, etc.).
+- Formulário de abertura com campos personalizáveis (tipo de problema, urgência, setor).
+
+- Opção de anexar arquivos (prints, logs de erro, documentos).
+- Categorização automática ou manual (TI, Financeiro, RH, Infraestrutura, etc.).
 
 3. Classificação e Priorização
-	•	Definição de níveis de prioridade (Urgente, Alta, Média, Baixa).
-	•	Regras automatizadas para priorização (exemplo: chamados de TI que impactam todos os usuários = prioridade máxima).
-	•	SLA (Service Level Agreement) configurável para cada tipo de chamado.
+- Definição de níveis de prioridade (Urgente, Alta, Média, Baixa).
+- Regras automatizadas para priorização (exemplo: chamados de TI que impactam todos os usuários = prioridade máxima).
+- SLA (Service Level Agreement) configurável para cada tipo de chamado.
 
 4. Fluxo de Atendimento
-	•	Painel com fila de chamados organizados por prioridade e setor.
-	•	Atribuição automática ou manual para os atendentes responsáveis.
-	•	Notificações automáticas para solicitantes e responsáveis (e-mail, WhatsApp, sistema interno).
-	•	Atualização do status do chamado (Aberto, Em andamento, Aguardando resposta, Resolvido, Fechado).
+- Painel com fila de chamados organizados por prioridade e setor.
+- Atribuição automática ou manual para os atendentes responsáveis.
+- Notificações automáticas para solicitantes e responsáveis (e-mail, WhatsApp, sistema interno).
+- Atualização do status do chamado (Aberto, Em andamento, Aguardando resposta, Resolvido, Fechado).
 
 5. Comunicação e Histórico
-	•	Chat interno dentro do chamado para conversas entre solicitante e atendente.
-	•	Registro de todas as interações e atualizações feitas no chamado.
-	•	Possibilidade de reabrir chamados fechados.
+- Chat interno dentro do chamado para conversas entre solicitante e atendente.
+- Registro de todas as interações e atualizações feitas no chamado.
+- Possibilidade de reabrir chamados fechados.
 
 6. Relatórios e Monitoramento
-	•	Dashboard com métricas (quantidade de chamados por setor, tempo médio de resolução, chamados pendentes).
-	•	Relatórios detalhados com exportação para Excel/PDF.
-	•	Análise de chamados recorrentes para identificação de problemas.
+- Dashboard com métricas (quantidade de chamados por setor, tempo médio de resolução, chamados pendentes).
+- Relatórios detalhados com exportação para Excel/PDF.
+- Análise de chamados recorrentes para identificação de problemas.
+
+
   Caso de Uso:
   
 
