@@ -78,10 +78,11 @@ Projeto PIM - 1° semestre de 2025
 
 
   Caso de Uso:
-  
+
 
   
-![CasodeUsoAstah](https://github.com/user-attachments/assets/1466d833-78fc-49f3-b2d3-06412ef57ad9)
+  ![casodeuso](https://github.com/user-attachments/assets/21eda98d-2946-41f0-a674-ac2a2f1f10ed)
+
 
 - Requisitos não funcionais
   
