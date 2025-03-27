@@ -71,11 +71,6 @@ Projeto PIM - 1° semestre de 2025
 - Registro de todas as interações e atualizações feitas no chamado.
 - Possibilidade de reabrir chamados fechados.
 
-6. Relatórios e Monitoramento
-- Dashboard com métricas (quantidade de chamados por setor, tempo médio de resolução, chamados pendentes).
-- Relatórios detalhados com exportação para Excel/PDF.
-- Análise de chamados recorrentes para identificação de problemas.
-
 
   Caso de Uso:
 
