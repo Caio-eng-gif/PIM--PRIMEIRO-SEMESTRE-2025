@@ -109,13 +109,13 @@ Projeto PIM - 1° semestre de 2025
 
 
 
-**Diagrama de classes**
+**Diagrama de Classes**
 
 
 ![diagrama de classes](https://github.com/user-attachments/assets/de0c477f-96ca-4010-8057-d1d84b6b623a)
 
 
-**Diagrama de sequência**
+**Diagrama de Sequência**
 
 
 ![diagrama de sequência](https://github.com/user-attachments/assets/e7581795-72f4-4483-8c70-6ed5a919c25d)
