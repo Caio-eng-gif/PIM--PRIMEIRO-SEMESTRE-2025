@@ -1,6 +1,6 @@
-# PIM--PRIMEIRO-SEMESTRE-2025
+# PIM-PRIMEIRO-SEMESTRE-2025
 
-# NOME DO PROJETO- PIM- 2° semestre
+# NOME DO PROJETO - PIM
 Projeto PIM - 1° semestre de 2025
 
 
@@ -43,7 +43,7 @@ Projeto PIM - 1° semestre de 2025
 
 
 
-## 💬 Descritivo do Projeto
+## 💬 Descritivo do Projeto - Requisitos do Sistema
 **Requisitos Funcionais**
   
 Controle de acesso 
@@ -147,8 +147,10 @@ Treinamento e Capacitação
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 📝 Product Backlog
+[📄 Confira a documentação completa aqui](PRODUCT_BACKLOG_versão_1.0.pdf)
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 📝 Sprint Backlog
 [📄 Confira a documentação completa aqui](SprintBacklog_versão1.0.pdf)
