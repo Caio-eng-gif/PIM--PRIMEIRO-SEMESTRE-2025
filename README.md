@@ -1,6 +1,6 @@
 # PIM--PRIMEIRO-SEMESTRE-2025
 
-# NOME DO PROJETO- PIM- 2° semestre
+# NOME DO PROJETO- PIM- 2°/3° semestre
 Projeto PIM - 1° semestre de 2025
 
 
