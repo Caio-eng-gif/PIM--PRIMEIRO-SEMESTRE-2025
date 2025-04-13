@@ -5,7 +5,7 @@
 # 🎓 Aprendizado por Projeto Integrador
 * UNIP
 
-* 2º Período - Analise e Desenvolvimento de Sistemas
+* 2º Período / 3º Período - Analise e Desenvolvimento de Sistemas
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
