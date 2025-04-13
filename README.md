@@ -1,7 +1,5 @@
-# PIM-PRIMEIRO-SEMESTRE-2025
+# Sistema integrado para gestão de chamados e suporte técnico baseado em IA.
 
-# NOME DO PROJETO - PIM
-Sistema integrado para gestão de chamados e suporte técnico baseado em IA
 
 
 # 🎓 Aprendizado por Projeto Integrador
