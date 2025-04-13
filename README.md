@@ -1,4 +1,4 @@
-# Sistema integrado para gestão de chamados e suporte técnico baseado em IA.
+# 📲Sistema integrado para gestão de chamados e suporte técnico baseado em IA.
 
 
 
