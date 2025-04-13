@@ -1,7 +1,7 @@
 # PIM-PRIMEIRO-SEMESTRE-2025
 
 # NOME DO PROJETO - PIM
-Projeto PIM - 1° semestre de 2025
+Sistema integrado para gestão de chamados e suporte técnico baseado em IA
 
 
 # 🎓 Aprendizado por Projeto Integrador
@@ -40,6 +40,8 @@ Projeto PIM - 1° semestre de 2025
 
 
 ## 🎯 Objetivo
+
+Realizar o levantamento e análise de requisitos para a criação de um sistema de suporte técnico inteligente, que utilize Inteligência Artificial para triagem inicial, categorização automática de chamados e sugestão de soluções, visando otimizar o tempo de resposta e reduzir a sobrecarga da equipe de TI. A LGPD deve ser aplicada a todos os dados pessoais tratados no sistema. O desenvolvimento ocorrerá no próximo semestre (PIM IV).
 
 
 
