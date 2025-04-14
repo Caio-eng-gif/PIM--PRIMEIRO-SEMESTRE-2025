@@ -1,5 +1,8 @@
 # 📲Sistema integrado para gestão de chamados e suporte técnico baseado em IA.
 
+# PIM- 2°/3° semestre
+Projeto PIM - 1° semestre de 2025
+
 
 
 # 🎓 Aprendizado por Projeto Integrador
