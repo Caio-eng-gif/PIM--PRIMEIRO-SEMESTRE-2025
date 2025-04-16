@@ -152,7 +152,13 @@ Treinamento e Capacitação
 
 
 
- <img src="https://github.com/user-attachments/assets/d1c9c786-cbb7-4e38-be25-9436536908c7" alt="GitHub logo" width="50">
+ <img src="https://github.com/user-attachments/assets/d1c9c786-cbb7-4e38-be25-9436536908c7" alt="GitHub logo" width="80">
+
+
+
+<img src="https://github.com/user-attachments/assets/638a95be-f589-41eb-a881-9ec0e2d1dbe7" alt="image" width="100"/>
+
+
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
