@@ -1,3 +1,9 @@
+<img src="https://github.com/user-attachments/assets/4e9a0245-767e-4a80-aec5-e715a6d94529" alt="Logo MVP Desk" width="200"/>
+
+
+
+
+
 # 📲Sistema integrado para gestão de chamados e suporte técnico baseado em IA.
 
 # PIM- 2°/3° semestre
