@@ -109,41 +109,7 @@ Treinamento e Capacitação
 - A solução de IA integrada no sistema precisa de um processo contínuo de treinamento e atualização dos modelos, para garantir que os algoritmos de triagem sejam precisos e eficientes ao longo do tempo.
 - Mecanismos de Feedback: O sistema deve permitir que os operadores forneçam feedback sobre a precisão da triagem, o que pode ser usado para ajustar ou melhorar os modelos.
 
- **Caso de Uso:**
-
-
-  
-  ![casodeuso](https://github.com/user-attachments/assets/21eda98d-2946-41f0-a674-ac2a2f1f10ed) 
-
-
-
-**Diagrama de Classes**
-
-
-
-
-![diagrama de classes](https://github.com/user-attachments/assets/de0c477f-96ca-4010-8057-d1d84b6b623a)
-
-
-
-
-**Diagrama de Sequência**
-
-
-
-
-![diagrama de sequência](https://github.com/user-attachments/assets/e7581795-72f4-4483-8c70-6ed5a919c25d)
-
-
-
-
-
-**Diagrama ER**
-
-
-
-![Diagrama em branco (1)](https://github.com/user-attachments/assets/80e1c2c4-261e-4987-9f0e-49f40be4cceb)
-
+ 
 
 
 
