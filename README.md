@@ -136,6 +136,6 @@ Treinamento e Capacitação
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 📝 Sprint Backlog
-[📄 Confira a documentação completa aqui](SprintBacklog_versão1.0.pdf)
+[📄 Confira a documentação completa aqui](SprintBacklog_versão1.1.pdf)
 
 
