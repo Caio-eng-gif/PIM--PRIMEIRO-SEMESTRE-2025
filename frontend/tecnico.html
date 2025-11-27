@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>MVP Desk - Técnico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <img src="MVPDESK.png" alt="Logo do Sistema">
+</header>
+
+<div class="container">
+  <h2 id="boasVindas"></h2>
+  <div class="tabs">
+    <button onclick="carregarChamados('Aberto')">Abertos</button>
+    <button onclick="carregarChamados('Em atendimento')">Em Atendimento</button>
+    <button onclick="carregarChamados('Concluído')">Concluídos</button>
+  </div>
+  <div id="lista"></div>
+</div>
+
+<footer>
+  <button class="btn-voltar" onclick="logout()">← Sair</button>
+</footer>
+
+<script>
+const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+if (!usuario) {
+  alert("Faça login primeiro!");
+  window.location.href = "index.html";
+}
+document.getElementById("boasVindas").innerText =
+  `Bem-vindo, ${usuario.Nome}`;
+
+function logout() {
+  // Adiciona a caixa de confirmação
+  const confirma = confirm("Tem certeza que deseja sair?");
+  
+  if (confirma) {
+    sessionStorage.clear();
+    window.location.href = "index.html";
+  }
+  // Se o usuário clicar em "Cancelar", a função termina aqui e a página não muda.
+}
+
+function traduzirStatus(status) {
+  switch (status) {
+    case "Aberto": return "Abertos";
+    case "Em atendimento": return "Em Atendimento";
+    case "Concluído": return "Concluídos";
+    default: return status;
+  }
+}
+
+async function carregarChamados(status) {
+  const url = status === "Aberto" 
+    ? "http://localhost:3000/chamados/status?status=Aberto"
+    : `http://localhost:3000/meusChamados?tecnicoId=${usuario.UsuarioID}&status=${status}`;
+
+  const resp = await fetch(url);
+  const chamados = await resp.json();
+
+  let html = `<h3>Chamados ${traduzirStatus(status)}</h3>`;
+  chamados.forEach(c => {
+    html += `<div>
+      <strong>#${c.ChamadoID} - ${c.Categoria}</strong><br>
+      Descrição: ${c.Descricao}<br>
+      Aberto por: ${c.NomeColaborador}<br>
+      Status: ${c.Status}<br>
+    `;
+	
+
+    if (status === "Aberto") {
+      html += `<button onclick="assumirChamado(${c.ChamadoID})">Assumir</button>`;
+    } else {
+      html += `
+        <textarea id="texto-${c.ChamadoID}" placeholder="Parecer..."></textarea>
+        <select id="status-${c.ChamadoID}">
+          <option value="Em atendimento" ${c.Status === "Em atendimento" ? "selected" : ""}>Em Atendimento</option>
+          <option value="Concluído" ${c.Status === "Concluído" ? "selected" : ""}>Concluído</option>
+        </select>
+        <button onclick="registrarParecer(${c.ChamadoID})">Salvar</button>
+        <div id="pareceres-${c.ChamadoID}"></div>
+      `;
+      carregarPareceres(c.ChamadoID);
+    }
+    html += "</div><hr>";
+  });
+  
+  
+
+  document.getElementById("lista").innerHTML = html;
+}
+
+async function assumirChamado(chamadoId) {
+  const resp = await fetch("http://localhost:3000/assumirChamado", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ chamadoId, tecnicoId: usuario.UsuarioID })
+  });
+  const data = await resp.json();
+  alert(data.message);
+  carregarChamados("Aberto");
+}
+
+async function registrarParecer(chamadoId) {
+  const texto = document.getElementById(`texto-${chamadoId}`).value;
+  const status = document.getElementById(`status-${chamadoId}`).value;
+
+  const resp = await fetch("http://localhost:3000/pareceres", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chamadoId,
+      tecnicoId: usuario.UsuarioID,
+      texto,
+      status
+    })
+  });
+
+  const data = await resp.json();
+  alert(data.message);
+  carregarChamados(status);
+}
+
+async function carregarPareceres(chamadoId) {
+  const resp = await fetch(`http://localhost:3000/pareceres?chamadoId=${chamadoId}`);
+  const pareceres = await resp.json();
+
+  let html = "<h4>Pareceres</h4><ul>";
+  pareceres.forEach(p => {
+    html += `<li><strong>${p.Tecnico}</strong> (${p.DataParecer}): ${p.Texto} [${p.Status}]</li>`;
+  });
+  html += "</ul>";
+
+  document.getElementById(`pareceres-${chamadoId}`).innerHTML = html;
+}
+
+window.onload = () => carregarChamados("Aberto");
+</script>
+</body>
+</html>

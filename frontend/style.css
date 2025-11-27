@@ -1,0 +1,106 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #000000;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+ header img {
+            height: 50px; /* Ajusta a altura da logo */
+        }
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+/* ⭐️ NOVO: Layout Grid para o Colaborador (Menu ao lado do Conteúdo) */
+.layout-colaborador {
+    display: grid;
+    /* Coluna 1: 150px para o menu, Coluna 2: Ocupa o restante (1 fração) */
+    grid-template-columns: 150px 1fr; 
+    gap: 20px;
+}
+/* O container padrão envolve o layout-colaborador */
+.container.layout-colaborador {
+    /* Remove o padding do container para que o menu fique mais ajustado à esquerda */
+    padding: 20px; 
+}
+
+
+h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+input, select, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #2980b9;
+}
+
+/* ⭐️ NOVO: Flexbox para as Abas do Técnico */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.tabs button {
+    flex-grow: 1; /* Faz os botões dividirem o espaço igualmente */
+    width: auto; /* Anula o 100% de cima */
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+/* ⭐️ NOVO: Estilo para listas dentro do conteúdo/pareceres */
+#conteudo ul, #pareceres-ia ul {
+    padding-left: 20px; /* Adiciona recuo para as listas padrão */
+}
+#pareceres-ia ul {
+    list-style-type: disc; /* Garante que a lista de pareceres tenha marcador */
+}
+
+/* ⭐️ NOVO: Flexbox para alinhar os botões de Sim/Não na sugestão da IA */
+.sugestao-botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.sugestao-botoes button {
+    width: auto; /* Permite que os botões se ajustem ao conteúdo */
+    flex-grow: 1; /* Faz os botões dividirem o espaço igualmente */
+}
+
+
+li {
+  background: #ecf0f1;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+.status {
+  font-weight: bold;
+  color: #27ae60;
+}

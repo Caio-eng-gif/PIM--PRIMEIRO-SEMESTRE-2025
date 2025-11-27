@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>MVP Desk - Colaborador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img src="MVPDESK.png" alt="Logo do Sistema">
+</header>
+<div class="container">
+  <h2 id="boasVindas"></h2>
+
+  <section class="menu">
+    <h2>Menu</h2>
+    <button onclick="abrirChamado()">Abrir Chamado</button>
+    <button onclick="carregarHistorico()">Histórico</button>
+    <button onclick="mostrarFAQ()">FAQ</button>
+    <div id="conteudo"></div>
+  </section>
+</div>
+
+<footer>
+  <button class="btn-voltar" onclick="logout()">← Sair</button>
+</footer>
+
+<script>
+// Variável 'usuario' deve ser definida fora das funções
+const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+if (!usuario) {
+  alert("Faça login primeiro!");
+  window.location.href = "index.html";
+}
+document.getElementById("boasVindas").innerText =
+  `Bem-vindo, ${usuario.Nome}`;
+
+function logout() {
+  // Adiciona a caixa de confirmação
+  const confirma = confirm("Tem certeza que deseja sair?");
+  
+  if (confirma) {
+    sessionStorage.clear();
+    window.location.href = "index.html";
+  }
+  // Se o usuário clicar em "Cancelar", a função termina aqui e a página não muda.
+}
+
+// NOVA FUNÇÃO UTILITÁRIA: Escapa caracteres HTML para injeção segura
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, (m) => map[m]);
+}
+
+
+// --------------------------------------------------------------------------------------------------
+// 1. FUNÇÃO PARA EXIBIR O FORMULÁRIO DE ABERTURA
+// --------------------------------------------------------------------------------------------------
+function abrirChamado() {
+  document.getElementById("conteudo").innerHTML = `
+    <h3>Abertura de Chamado</h3>
+    <select id="categoria">
+      <option value="">Categoria</option>
+      <option value="Hardware">Hardware</option>
+      <option value="Software">Software</option>
+      <option value="Outros">Outros</option>
+    </select>
+    <textarea id="descricao" placeholder="Descreva o problema..."></textarea>
+    <button onclick="iniciarRegistro()">Registrar</button>
+    <div id="sugestao-ia"></div>
+  `;
+}
+
+// --------------------------------------------------------------------------------------------------
+// 2. FUNÇÃO PRINCIPAL: CHAMA A IA ANTES DE REGISTRAR
+// --------------------------------------------------------------------------------------------------
+async function iniciarRegistro() {
+  const categoria = document.getElementById("categoria").value;
+  const descricao = document.getElementById("descricao").value;
+
+  if (!categoria || !descricao) {
+    alert("Preencha a categoria e a descrição do problema.");
+    return;
+  }
+
+  // Desabilita o botão para evitar cliques múltiplos
+  const btn = document.querySelector("#conteudo button");
+  btn.innerText = "Buscando sugestão do MVPzinho...";
+  btn.disabled = true;
+
+  try {
+    // 📞 Chama a rota /sugerir da API de IA (unificada no server.js)
+    const respIA = await fetch("http://localhost:3000/sugerir", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ descricao })
+    });
+
+    const dataIA = await respIA.json();
+    
+    // Verifica se a IA retornou uma sugestão
+    if (dataIA.sugestao) {
+      exibirSugestao(dataIA.sugestao, categoria, descricao);
+    } else {
+      // Se falhou ou não retornou sugestão, registra direto (plano B)
+      alert("O MVPzinho não conseguiu gerar uma sugestão. O chamado será registrado para o técnico.");
+      await registrarChamadoNoBanco(categoria, descricao);
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Erro de comunicação com o servidor de IA. Registrando chamado tradicionalmente.");
+    await registrarChamadoNoBanco(categoria, descricao);
+  } finally {
+    // Reabilita o botão se não houver redirecionamento ou ação final
+    btn.innerText = "Registrar";
+    btn.disabled = false;
+  }
+}
+
+// 3. EXIBE A SUGESTÃO E AS OPÇÕES
+// --------------------------------------------------------------------------------------------------
+function exibirSugestao(sugestao, categoria, descricao) {
+  const elementoSugestao = document.getElementById("sugestao-ia");
+  
+  // ⭐️ UTILIZA escapeHtml() para segurança e depois substitui * por <li>
+  // Substitui cada linha que começa com "* " por <li>
+  let sugestaoFormatada = escapeHtml(sugestao);
+  sugestaoFormatada = sugestaoFormatada.replace(/\* (.*)/g, '<li>$1</li>');
+  sugestaoFormatada = `<ul>${sugestaoFormatada}</ul>`; // Envolve tudo em <ul>
+
+  
+  elementoSugestao.innerHTML = `
+    <hr>
+    <h4>💡 Sugestão da Solução (IA)</h4>
+    <div style="background: #eaf6ff; padding: 15px; border-radius: 8px; border-left: 5px solid #3498db;">
+      ${sugestaoFormatada}
+    </div>
+    <p><strong>A sugestão da IA resolveu seu problema?</strong></p>
+    <button onclick="problemaResolvido()">Sim, resolveu!</button>
+    <button onclick="encaminharParaTecnico('${categoria}', '${descricao}')" style="background: #e74c3c;">Não, preciso do técnico</button>
+    <hr>
+  `;
+}
+
+// --------------------------------------------------------------------------------------------------
+// 4. AÇÃO: PROBLEMA RESOLVIDO PELA IA
+// --------------------------------------------------------------------------------------------------
+function problemaResolvido() {
+  document.getElementById("conteudo").innerHTML = `
+    <h3 style="color: #27ae60;">🎉 Problema Resolvido!</h3>
+    <p>Que bom que a sugestão do MVPzinho ajudou! Não foi necessário registrar o chamado, e você já pode voltar a trabalhar. Caso precise de algo mais, faça uma nova solicitação!</p>
+  `;
+}
+
+// --------------------------------------------------------------------------------------------------
+// 5. AÇÃO: REGISTRA O CHAMADO PARA O TÉCNICO
+// --------------------------------------------------------------------------------------------------
+async function encaminharParaTecnico(categoria, descricao) {
+  // Chamado para a função que realmente registra no banco
+  await registrarChamadoNoBanco(categoria, descricao);
+}
+
+// --------------------------------------------------------------------------------------------------
+// 6. FUNÇÃO DE REGISTRO NO BANCO (USADA APENAS SE A IA NÃO AJUDAR)
+// --------------------------------------------------------------------------------------------------
+async function registrarChamadoNoBanco(categoria, descricao) {
+  // Necessário obter a variável global 'usuario' para o ID
+  const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+
+  const resp = await fetch("http://localhost:3000/chamados", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ usuarioId: usuario.UsuarioID, categoria, descricao })
+  });
+
+  const data = await resp.json();
+
+  if (data.success) {
+      document.getElementById("conteudo").innerHTML = `
+        <h3 style="color: #e74c3c;">Chamado Registrado!</h3>
+        <p>Sua solicitação foi registrada e será encaminhada ao primeiro técnico disponível.</p>
+      `;
+  } else {
+      alert("Erro ao registrar chamado. Tente novamente mais tarde.");
+      abrirChamado(); // Volta para a tela de abertura
+  }
+}
+
+// --------------------------------------------------------------------------------------------------
+// FUNÇÕES DE HISTÓRICO E FAQ
+// --------------------------------------------------------------------------------------------------
+async function carregarHistorico() {
+  const resp = await fetch(`http://localhost:3000/chamados?usuarioId=${usuario.UsuarioID}`);
+  const chamados = await resp.json();
+
+  let html = "<h3>Histórico de Chamados</h3>";
+  for (const c of chamados) {
+    html += `<div>
+      <strong>#${c.ChamadoID} - ${c.Categoria}</strong><br>
+      Descrição: ${c.Descricao}<br>
+      Técnico responsável: ${c.NomeTecnico ? c.NomeTecnico : "Ainda não atribuído"}<br>
+      Status: ${c.Status}<br>
+      <div id="pareceres-${c.ChamadoID}"></div>
+    </div><hr>`;
+  }
+
+  // primeiro insere o HTML completo
+  document.getElementById("conteudo").innerHTML = html;
+
+  // depois carrega os pareceres em cada div
+  for (const c of chamados) {
+    carregarPareceres(c.ChamadoID);
+  }
+}
+
+async function carregarPareceres(chamadoId) {
+  const resp = await fetch(`http://localhost:3000/pareceres?chamadoId=${chamadoId}`);
+  const pareceres = await resp.json();
+
+  if (pareceres.length > 0) {
+    let html = "<h4>Pareceres</h4><ul>";
+    pareceres.forEach(p => {
+      html += `<li><strong>${p.Tecnico}</strong> (${p.DataParecer}): ${p.Texto} [${p.Status}]</li>`;
+    });
+    html += "</ul>";
+    document.getElementById(`pareceres-${chamadoId}`).innerHTML = html;
+  }
+}
+
+function mostrarFAQ() {
+  const html = `
+    <h3>FAQ - Perguntas Frequentes</h3>
+    <ul>
+      <li><strong>1: Meu computador não está ligando. O que devo fazer primeiro?</strong><br>
+          Verifique se o cabo de energia está bem conectado à tomada e ao computador. Se estiver usando um notebook, teste com o carregador conectado. Caso o problema continue, abra um chamado na categoria "Hardware".</li><br>
+      <li><strong>2: Preciso solicitar novos equipamentos (notebook, monitor e headset). Como solicito?</strong><br>
+          As solicitações de novos equipamentos devem ser registradas através da abertura de chamado na categoria "Outros". Informe o equipamento necessário e o motivo da solicitação para avaliação do setor responsável.</li><br>
+      <li><strong>3. O mouse e o teclado pararam de funcionar. O que fazer?</strong><br>
+          Primeiro, desconecte e reconecte os dispositivos. Se forem sem fio, verifique pilhas ou bateria. Caso ainda não funcionem, teste em outra porta USB ou em outro computador. Persistindo o problema, abra um chamado em "Hardware".</li><br>
+    </ul>
+  `;
+  document.getElementById("conteudo").innerHTML = html;
+}
+</script>
+</body>
+</html>
