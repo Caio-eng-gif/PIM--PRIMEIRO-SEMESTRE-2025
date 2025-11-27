@@ -1,0 +1,19 @@
+create database MVPDesk;
+
+create user admin
+
+Nome do servidor:serv-mvpdesk.database.windows.net
+usuario:mvpadmin
+Mvpdesk1234@
+
+ou 
+usuario: nome de cada um
+senha: SenhaForte123
+
+
+
+// 🤖 Configuração da IA Gemini
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY, // Usa a chave definida no arquivo .env
+});
+
